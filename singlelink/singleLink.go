@@ -143,6 +143,16 @@ func (l *LinkList) ScanLinkList() {
 	fmt.Printf("第 %d 个节点的值为：%d\n", i, current.Data)
 }
 
+// 单向链表翻转
+func (l *LinkList) ReverseList() {
+	current := l.Header
+	var pre *Node
+	for current != nil {
+		current, current.Next, pre = current.Next, pre, current
+	}
+	l.Header = pre
+}
+
 
 func main() {
 	// 创建单向链表实例
@@ -169,6 +179,10 @@ func main() {
 	// 测试 删除第 i 位的元素
 	link.Delete(1)
 	// 遍历打印单向链表元素
-	link.ScanLinkList()
+	//link.ScanLinkList()
 
+	// 测试 翻转单向链表
+	link.ReverseList()
+	// 遍历打印单向链表元素
+	link.ScanLinkList()
 }
