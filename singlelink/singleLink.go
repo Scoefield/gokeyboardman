@@ -60,7 +60,7 @@ func (l *LinkList) Append(data interface{}) {
 		l.Header = newNode
 		return
 	}
-
+	// 遍历链表到最后一个节点，再进行添加​
 	current := l.Header
 	for current.Next != nil {
 		current = current.Next
