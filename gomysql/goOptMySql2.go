@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sq"
 	"database/sql"
 	"fmt"
 )

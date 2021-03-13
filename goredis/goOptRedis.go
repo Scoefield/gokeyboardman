@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"github.com/go-redis/redis"
 	"time"
-
-	"github.com/go-redis/redis/v8" // 注意导入的是新版本
 )
 
 var (
