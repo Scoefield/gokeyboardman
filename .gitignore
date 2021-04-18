@@ -12,3 +12,5 @@ _book/
 game.db.json
 /go.mod
 /go.sum
+
+*.DS_Store
