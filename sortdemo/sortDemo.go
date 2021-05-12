@@ -5,10 +5,16 @@ import "fmt"
 // 冒泡排序，从大到小排序
 func BubbleSort(arr []int) {
 	for i := 0; i < len(arr) - 1; i++ {
+		// 当某次冒泡操作没有数据交换时，说明已经达到完全有序了，用 swapFlag 来标识
+		swapFlag := false
 		for j := 0; j < len(arr)-1-i; j++ {
 			if arr[j] < arr[j+1] {
 				arr[j], arr[j+1] = arr[j+1], arr[j]
+				swapFlag = true
 			}
+		}
+		if !swapFlag {
+			break
 		}
 	}
 }
