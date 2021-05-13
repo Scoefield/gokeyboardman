@@ -16,6 +16,7 @@
 
 # 优质文章推荐
 
+- [什么？LRU缓存淘汰算法你没了解过？赶紧看过来！（干货）](https://zhuanlan.zhihu.com/p/372121276)
 - [看完这篇，MySql的事务隔离应该就懂了](https://zhuanlan.zhihu.com/p/371424773)
 - [MySql的底层数据结构竟然是...](https://zhuanlan.zhihu.com/p/369763072)
 - [Golang的sync.Pool你了解过吗？](https://zhuanlan.zhihu.com/p/369605252)
