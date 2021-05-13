@@ -42,7 +42,7 @@
 <a name="微信"></a>  <a name="公众号"></a>
 
 <p align="center" style="color:blue">
-  <a href="https://mp.weixin.qq.com/s/ePhaYezFblgt0NgbvtWqww">
+  <a href="https://mp.weixin.qq.com/s/-g7vG94tBGHjjeNwuC9-Ow">
     <h2 align="center">
         编程咨询、资料领取，可在公众号留言或直接扫码私我！
     </h2>
