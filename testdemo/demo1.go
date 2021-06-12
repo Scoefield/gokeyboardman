@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Node struct {
@@ -52,14 +54,26 @@ func (l *LinkList) scanLink() {
 	}
 }
 
+func testVSCodeWithGin() {
+	engine := gin.Default()
+	engine.GET("hello", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"code": 200,
+			"message": "hello golang.",
+		})
+	})
+
+	engine.Run()
+}
 
 func main() {
-	l := CreateLinkList()
-	l.Append(1)
-	l.Append(2)
-	l.Append(3)
-	l.Append(4)
-	l.Append(5)
-	l.turnNode()
-	l.scanLink()
+	// l := CreateLinkList()
+	// l.Append(1)
+	// l.Append(2)
+	// l.Append(3)
+	// l.Append(4)
+	// l.Append(5)
+	// l.turnNode()
+	// l.scanLink()
+	testVSCodeWithGin()
 }
