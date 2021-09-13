@@ -43,8 +43,10 @@ func (l *LRUCache) setHeader(node *Node) {
 
 // 删除节点
 func (l *LRUCache) remove(node *Node) {
-	l.Head.Next = node.Next
-	node.Next.Pre = l.Head
+	//l.Head.Next = node.Next
+	//node.Next.Pre = l.Head
+	node.Pre.Next = node.Next
+	node.Next.Pre = node.Pre
 }
 
 // 通过 key 获取数据
@@ -54,10 +56,12 @@ func (l *LRUCache) remove(node *Node) {
 func (l *LRUCache) Get(key int) int {
 	node, ok := l.Map[key]
 	if !ok {
+		fmt.Println(-1)
 		return -1
 	}
 	l.remove(node)
 	l.setHeader(node)
+	fmt.Println(node.Val)
 	return node.Val
 }
 
@@ -86,20 +90,43 @@ func (l *LRUCache) Put(key, value int) {
 
 // 主函数，LRU算法测试
 func main() {
-	lruCache := NewLRUCache(3)
+	// 测试一：
+	//lruCache := NewLRUCache(3)
+	//
+	//val := lruCache.Get(2)
+	//fmt.Println(val)
+	//
+	//lruCache.Put(2, 22)
+	//lruCache.Put(3, 33)
+	//
+	//val = lruCache.Get(2)
+	//fmt.Println(val)
+	//
+	//lruCache.Put(4, 44)
+	//lruCache.Put(5, 55)
+	//
+	//val = lruCache.Get(3)
+	//fmt.Println(val)
 
-	val := lruCache.Get(2)
-	fmt.Println(val)
+	// 测试二：
+	//lruCache := NewLRUCache(2)
+	//lruCache.Put(1, 1)
+	//lruCache.Put(2, 2)
+	//lruCache.Get(1)
+	//lruCache.Put(3, 3)
+	//lruCache.Get(2)
+	//lruCache.Put(4, 4)
+	//lruCache.Get(1)
+	//lruCache.Get(3)
+	//lruCache.Get(4)
 
-	lruCache.Put(2, 22)
-	lruCache.Put(3, 33)
+	// 测试三：
+	lruCache := NewLRUCache(2)
+	lruCache.Put(2, 1)
+	lruCache.Put(2, 2)
+	lruCache.Get(2)
+	lruCache.Put(1, 1)
+	lruCache.Put(4, 1)
+	lruCache.Get(2)
 
-	val = lruCache.Get(2)
-	fmt.Println(val)
-
-	lruCache.Put(4, 44)
-	lruCache.Put(5, 55)
-
-	val = lruCache.Get(3)
-	fmt.Println(val)
 }
